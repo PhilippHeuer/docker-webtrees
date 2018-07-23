@@ -42,6 +42,9 @@ RUN echo "Installing Packages ..." &&\
 	rm -rf webtrees-*.zip /var/www/html/webtrees &&\
 	echo "Installation complete ..."
 
+# Copy files from rootfs to the container
+ADD rootfs /
+
 # Build CleanUp
 ## Removes all packages that have been flagged as build dependencies
 RUN echo "CleanUp ..."
